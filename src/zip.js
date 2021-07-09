@@ -28,7 +28,7 @@ module.exports = function(gj, options) {
     });
 
   return zip.generateAsync({
-    type: process.browser === undefined ? 'nodebuffer' : 'blob',
+    type: (process && process.browser === undefined) ? 'nodebuffer' : 'blob',
     compression: 'DEFLATE'
   });
 };
